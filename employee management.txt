@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct employee {
+    char empname[20];
+    char position[20];
+    int salary;
+};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct employee {
+    char empname[20];
+    char position[20];
+    int salary;
+};
+int main()
+{
+    struct employee emp[100];
+    char emp_name[40], pos[40];
+    int i, input, count;
+    i = input = count = 0;
+    while (input != 5) {
+        printf("\n\n""EMPLOYEE MANAGEMENT SYSTEM ""\n");
+        printf("\n\n1. Add employee information\n2. Display employee information\n");
+        printf("3. List the number of employees in the office\n");
+        printf("4. Exit");
+        printf("\n\nSelect one of the above options: ");
+        scanf("%d", &input);
+        switch (input) {
+        case 1:
+            printf("Enter employee name = ");
+            scanf("%s", emp[i].empname);
+            printf("Enter employee position = ");
+            scanf("%s", emp[i].position);
+            printf("Enter employee salary = ");
+            scanf("%d", &emp[i].salary);
+            count++;
+            break;
+        case 2:
+            printf("Employee information : \n");
+            for (i = 0; i < count; i++) {
+                printf("employee name = %s",
+                       emp[i].empname);
+                printf("\t employee position = %s",
+                       emp[i].position);
+                printf("\t  salary = %d",
+                       emp[i].salary);
+            }
+            break;
+        case 3:    
+            printf("\n No of employees in the office : %d",count);
+            break;
+        case 4:
+            exit(0);
+        }
+    }
+    return 0;
+}
